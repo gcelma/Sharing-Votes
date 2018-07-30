@@ -21,15 +21,15 @@ import { MatSidenavModule,
          MatNativeDateModule } from '@angular/material';
 
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule,MatToolbarModule,MatIconModule,
+  imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
             MatMenuModule, MatSidenavModule, MatListModule, MatCardModule,
-            MatTableModule,MatPaginatorModule, MatSortModule, MatTooltipModule,
+            MatTableModule, MatPaginatorModule, MatSortModule, MatTooltipModule,
             MatBadgeModule, MatExpansionModule, MatFormFieldModule,
             MatDatepickerModule, MatNativeDateModule],
 
-  exports: [MatButtonModule, MatCheckboxModule,MatToolbarModule,MatIconModule,
+  exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
             MatMenuModule, MatSidenavModule, MatListModule, MatCardModule,
-            MatTableModule,MatPaginatorModule, MatSortModule, MatTooltipModule,
+            MatTableModule, MatPaginatorModule, MatSortModule, MatTooltipModule,
             MatBadgeModule, MatExpansionModule, MatFormFieldModule,
             MatDatepickerModule, MatNativeDateModule],
 })
