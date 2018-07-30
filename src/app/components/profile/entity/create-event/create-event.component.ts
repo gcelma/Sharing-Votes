@@ -1,0 +1,87 @@
+import { Component, OnInit } from '@angular/core';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+
+import { EntityService } from '../../../../services/entity.service';
+import { ToastrService } from 'ngx-toastr';
+
+import { EntityEvent } from '../../../../models/event';
+
+@Component({
+  selector: 'create-event',
+  templateUrl: './create-event.component.html',
+  styleUrls: ['./create-event.component.css']
+})
+export class CreateEventComponent implements OnInit {
+
+  selectedEvent: EntityEvent = <EntityEvent>{};
+
+  constructor(private toastr: ToastrService,
+              private entityService: EntityService) { }
+
+  ngOnInit() {
+    this.getEvents();
+  }
+
+  getEvents() {
+    this.entityService.getEvents()
+      .subscribe(res => {
+        this.entityService.events = res as EntityEvent[];
+      });
+  }
+
+  addEvent(form?: NgForm) {
+
+   form.value.eventTime = this.yyyymmdd(form.value.eventTime);
+   console.log(form.value.eventTime);
+   if(form.value.eventID) {
+     this.entityService.putEvent(form.value)
+       .subscribe(res => {
+         this.resetForm(form);
+         this.getEvents();
+         console.log('Evento editado');
+       });
+   } else {
+     this.entityService.postEvent(form.value)
+     .subscribe(res => {
+       this.getEvents();
+       this.resetForm(form);
+        console.log('Evento guardado');
+     });
+   }
+ }
+
+ deleteEvent(id: string, form: NgForm) {
+    if(confirm('Estás seguro quieres eliminar este evento?')) {
+      this.entityService.deleteEvent(id)
+        .subscribe(res => {
+          this.getEvents();
+          this.resetForm(form);
+           console.log('Evento eliminado');
+        });
+    }
+  }
+
+  editEvent(event: EntityEvent) {
+   this.selectedEvent = event;
+ }
+
+ resetForm(addEventForm?: NgForm){
+  if (addEventForm != null) // Reset form if not empty and we add a empty Poll
+    addEventForm.reset();
+    this.selectedEvent = <EntityEvent>{}; // Instance a Empty Poll Class
+  }
+
+  yyyymmdd(date) {
+    date = new Date();
+    var y = date.getFullYear().toString();
+    var m = (date.getMonth() + 1).toString();
+    var d = date.getDate().toString();
+    (d.length == 1) && (d = '0' + d);
+    (m.length == 1) && (m = '0' + m);
+    var yyyymmdd = d + '/' + m + '/' + y;
+    return yyyymmdd;
+}
+
+}
