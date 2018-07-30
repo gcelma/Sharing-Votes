@@ -49,13 +49,15 @@ import { AppRoutingModule } from './routes/app.routes';
 import { ToastrModule } from 'ngx-toastr';
 
 import { CreateEventComponent } from './components/profile/entity/create-event/create-event.component';
-import { ProfileComponent } from './Components/profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { AuthService } from './services/auth.service';
 import { CargaComponent } from './components/carga/carga.component';
 import { LoadImageService } from './services/load-image.service';
 import { environment } from '../environments/environment';
 import { PicturesComponent } from './components/profile/pictures/pictures.component';
-import { EntityRegisterComponent } from './componentes/entity-register/entity-register.component';
+import { EntityRegisterComponent } from './components/entity-register/entity-register.component';
+import { EventsComponent } from './components/profile/entity/events/events.component';
+import { EventComponent } from './components/profile/entity/events/event/event.component';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { EntityRegisterComponent } from './componentes/entity-register/entity-re
     ProfileComponent,
     PicturesComponent,
     CargaComponent,
-    EntityRegisterComponent
+    EntityRegisterComponent,
+    EventsComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

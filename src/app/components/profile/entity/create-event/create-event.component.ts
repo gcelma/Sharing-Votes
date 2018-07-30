@@ -34,9 +34,7 @@ export class CreateEventComponent implements OnInit {
   addEvent(form?: NgForm) {
 
    form.value.eventTime = this.yyyymmdd(form.value.eventTime);
-
    form.value.entityID = this.entityService.profileID;
-   console.log(form.value);
 
    if (form.value.eventID) {
      this.entityService.putEvent(form.value)
@@ -53,6 +51,12 @@ export class CreateEventComponent implements OnInit {
         console.log('Evento guardado');
      });
    }
+
+    const newEvent = new EntityEvent (form.value.entityID, form.value.eventName,
+    form.value.eventTime, form.value.eventDescription);
+
+    this.entityService.events.push(newEvent);
+
  }
 
  deleteEvent(id: string, form: NgForm) {
@@ -78,9 +82,9 @@ export class CreateEventComponent implements OnInit {
 
   yyyymmdd(date) {
     date = new Date();
-    var y = date.getFullYear().toString();
-    var m = (date.getMonth() + 1).toString();
-    var d = date.getDate().toString();
+    let y = date.getFullYear().toString();
+    let m = (date.getMonth() + 1).toString();
+    let d = date.getDate().toString();
     (d.length == 1) && (d = '0' + d);
     (m.length == 1) && (m = '0' + m);
     var yyyymmdd = d + '/' + m + '/' + y;

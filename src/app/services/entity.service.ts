@@ -14,7 +14,8 @@ export class EntityService {
 
   isEntity: boolean;
   pollList: CustomPoll[]=[];
-  events: EntityEvent[];
+  events: EntityEvent[]=[];
+  profileID: string;
 
   constructor(private http: HttpClient) { }
 
