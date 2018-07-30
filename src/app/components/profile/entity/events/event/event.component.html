@@ -1,8 +1,9 @@
 <div class="col m6 s12 events-list animated fadeIn">
     <mat-accordion>
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
-                <mat-panel-title [ngClass]="{'title': panelOpenState ==true}">
+                <mat-panel-title [ngClass]="{'title': panelOpenState == true}">
                     {{event.eventName}}
                 </mat-panel-title>
                 <mat-panel-description>
@@ -12,5 +13,4 @@
             {{event.eventDescription}}
         </mat-expansion-panel>
     </mat-accordion>
-
 </div>

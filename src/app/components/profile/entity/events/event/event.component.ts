@@ -10,9 +10,17 @@ export class EventComponent implements OnInit {
 
   @Input() event: EntityEvent;
 
+  showcreatePoll: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+
   }
+
+  createPoll(){
+    this.showcreatePoll = !this.showcreatePoll;
+  }
+
 
 }
