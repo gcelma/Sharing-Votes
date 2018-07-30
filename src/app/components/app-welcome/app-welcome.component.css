@@ -1,20 +1,27 @@
-
 h2 {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .bold {
-  color:#2196F3;
-  font-weight: bold;
+    color: #fdb914;
+    font-weight: bold;
 }
 
 button {
-  display: block;
-  margin:10px auto;
-  padding: 10px 15px;
-  border-radius: 5px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
-button:hover{
-  color:#FFCA28;
+button:hover {
+    color: #FFCA28;
+}
+
+.home-logo {
+    margin: auto;
+}
+
+.mat-raised-button {
+    background-color: #fdb914;
 }
