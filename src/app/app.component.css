@@ -1,8 +1,4 @@
-
 .nav-margin {
-  margin-top: 50px;
-  padding-bottom: 15px;
-  -webkit-box-shadow: 1px 1px 10px 10px rgba(0,25,150,0.8);
-  -moz-box-shadow: 1px 1px 10px 10px rgba(0,25,150,0.8);
-  box-shadow: 1px 1px 10px 10px rgba(0,25,150,0.8);
+    margin-top: 90px;
+    padding-bottom: 15px;
 }

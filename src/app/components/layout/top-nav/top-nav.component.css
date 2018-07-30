@@ -1,51 +1,42 @@
-
 .header {
-   position: fixed;
-   overflow: hidden;
-   top: 0;
-   max-width: 820px;
-   z-index: 999;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    z-index: 999;
+    margin: 0;
+    background-color: #fecb51;
 }
 
 .example-spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
-.nav-Title, .example-icon {
-  transition: padding 3s;
-  padding: 0 20px;
+.nav-Title,
+.example-icon {
+    transition: padding 3s;
+    padding: 0 20px;
 }
 
 .example-icon:last-child {
-  padding-right: 35px;
+    padding-right: 35px;
 }
 
-@media only screen and (max-width:600px) {
-
-  .nav-Title {
-      transition: padding 2s;
-      padding-left: 5px;
-    }
-}
-
-.nav-Title::after {
-    content: " - Angular 6 / Material Design";
-}
-
-@media screen and (max-width: 600px) {
-  .nav-Title::after {
-      content: "";
-    }
-}
-
-mat-icon:hover{
-  cursor:pointer;
-  color:#FFCA28;
+mat-icon:hover {
+    cursor: pointer;
+    color: #FFCA28;
 }
 
 mat-toolbar {
-  max-height: 50px;
-  min-height: 50px;
-  vertical-align: middle;
-  border-bottom: 2px solid black;
+    max-height: 50px;
+    min-height: 50px;
+    vertical-align: middle;
+}
+
+.mat-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+    color: black;
 }
