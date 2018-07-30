@@ -21,7 +21,6 @@ export class PollComponent implements OnInit {
 
   ngOnInit() {
     this.pollList = this.entityService.pollList;
-
   }
 
 }

@@ -35,8 +35,8 @@ export class CreatePollComponent implements OnInit {
      let option2 = addPollForm.value.option2;
      let option3 = addPollForm.value.option3;
      let option4 = addPollForm.value.option4;
-     let eventID = "345hhcfgfgffgy";
-     let entityID = "345hhfgy";
+     let eventID = "12345";
+     let entityID = this.entityService.profileID;
 
      if (option3 == undefined) option3="";
      if (option4 == undefined) option4="";
@@ -49,13 +49,11 @@ export class CreatePollComponent implements OnInit {
                                                    eventID,entityID,
                                                    option3,option4);
 
-
          this.toastr.success('Tema Creado', 'Muy bien!');
          this.resetForm(addPollForm); // Reset the FORM
          this.entityService.pollList.push(newPoll);
 
-         console.log(this.entityService.pollList); 
-
+         console.log(this.entityService.pollList);
       }
    }
 

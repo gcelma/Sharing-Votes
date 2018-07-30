@@ -1,3 +1,4 @@
+
 <p class="center showMore"><mat-icon>expand_more</mat-icon></p>
 
 <form #addPollForm="ngForm" (ngSubmit)="onSubmit(addPollForm)">
@@ -15,7 +16,7 @@
         <i class="material-icons prefix">poll</i>
         <input name="option1" type="text"
         [(ngModel)]="selectedPoll.pollOption1" #option1="ngModel"
-        data-length="10" class="validate" required>
+      class="validate" required>
         <label for="option11">Opción 1 *</label>
       </div>
 
@@ -23,7 +24,7 @@
         <i class="material-icons prefix">poll</i>
         <input name="option2" type="text"
         [(ngModel)]="selectedPoll.pollOption2" #option2="ngModel"
-        data-length="10" class="validate" required>
+       class="validate" required>
         <label for="option2">Opción 2 *</label>
       </div>
 
@@ -31,7 +32,7 @@
         <i class="material-icons prefix">poll</i>
         <input name="option3" type="text"
         [(ngModel)]="selectedPoll.pollOption3" #option3="ngModel"
-        data-length="10" class="validate">
+         class="validate">
         <label for="option3">Opción 3</label>
       </div>
 
@@ -39,7 +40,7 @@
         <i class="material-icons prefix">poll</i>
         <input name="option4" type="text"
         [(ngModel)]="selectedPoll.pollOption4" #option4="ngModel"
-        data-length="10" class="validate">
+         class="validate">
         <label for="option4">Opción 4</label>
       </div>
   </div>

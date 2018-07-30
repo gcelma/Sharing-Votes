@@ -11,20 +11,7 @@
             </mat-expansion-panel-header>
             {{event.eventDescription}}
 
-            <div class="container">
-                <event-polls [entityEvent]="entityEvent"></event-polls>
-            </div><br><br>
-
-            <div class="buttonContainer">
-                <button (click)="createPoll()" class="show-poll" mat-flat-button color="primary">Crear Tema</button>
-            </div>
-
-            <br>
-
-            <div *ngIf="showcreatePoll">
-                <create-poll [entityEvent]="entityEvent"></create-poll>
-                <!-- Polls -->
-            </div>
+          <button class="btn" (click)="createPoll(event.entityID)">Crear Tema</button>  
         </mat-expansion-panel>
     </mat-accordion>
 </div>

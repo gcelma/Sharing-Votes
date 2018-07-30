@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EntityEvent } from '../../../../../models/event';
 
+import { Router } from '@angular/router'; // Router
+
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -10,17 +12,14 @@ export class EventComponent implements OnInit {
 
   @Input() event: EntityEvent;
 
-  showcreatePoll: boolean = false;
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
   }
 
-  createPoll(){
-    this.showcreatePoll = !this.showcreatePoll;
+  createPoll(id: string){  // Show INFO of the Book by Key
+    this.router.navigate(['/profile/'+id+'/theme']);
   }
-
 
 }
