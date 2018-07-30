@@ -34,8 +34,11 @@ export class CreateEventComponent implements OnInit {
   addEvent(form?: NgForm) {
 
    form.value.eventTime = this.yyyymmdd(form.value.eventTime);
-   console.log(form.value.eventTime);
-   if(form.value.eventID) {
+
+   form.value.entityID = this.entityService.profileID;
+   console.log(form.value);
+
+   if (form.value.eventID) {
      this.entityService.putEvent(form.value)
        .subscribe(res => {
          this.resetForm(form);
@@ -53,7 +56,7 @@ export class CreateEventComponent implements OnInit {
  }
 
  deleteEvent(id: string, form: NgForm) {
-    if(confirm('Estás seguro quieres eliminar este evento?')) {
+    if (confirm('Estás seguro quieres eliminar este evento?')) {
       this.entityService.deleteEvent(id)
         .subscribe(res => {
           this.getEvents();

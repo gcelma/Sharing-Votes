@@ -44,6 +44,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './routes/app.routes';
 
+// Toaster
+
+import { ToastrModule } from 'ngx-toastr';
+
 import { CreateEventComponent } from './components/profile/entity/create-event/create-event.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { AuthService } from './services/auth.service';
@@ -51,6 +55,7 @@ import { CargaComponent } from './components/carga/carga.component';
 import { LoadImageService } from './services/load-image.service';
 import { environment } from '../environments/environment';
 import { PicturesComponent } from './components/profile/pictures/pictures.component';
+import { EntityRegisterComponent } from './componentes/entity-register/entity-register.component';
 
 
 @NgModule({
@@ -64,7 +69,8 @@ import { PicturesComponent } from './components/profile/pictures/pictures.compon
     CreateEventComponent,
     ProfileComponent,
     PicturesComponent,
-    CargaComponent
+    CargaComponent,
+    EntityRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +81,10 @@ import { PicturesComponent } from './components/profile/pictures/pictures.compon
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true
+    }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

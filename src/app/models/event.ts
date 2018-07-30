@@ -1,12 +1,14 @@
 export class EntityEvent {
-      eventID: number;
+      entityID: string;
+      eventID: string;
       eventName: string;
       eventTime: string;
       eventDescription: string;
 
-      constructor (id: number, name: string, time: string, description: string){
+      constructor (EntityID: string, EventID: string, name: string, time: string, description: string){
 
-        this.eventID = id;
+        this.entityID = EntityID;
+        this.eventID = EventID;
         this.eventName = name;
         this.eventTime = time;
         this.eventDescription = description;

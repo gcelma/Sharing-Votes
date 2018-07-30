@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { EntityService } from '../../services/entity.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,18 +10,19 @@ import { AuthService } from '../../services/auth.service';
 export class ProfileComponent implements OnInit {
 
   profile: any;
+  profileID: string;
 
-  constructor( private auth: AuthService) { }
+  constructor( private auth: AuthService,
+                private entityService: EntityService) { }
 
   ngOnInit() {
     if (this.auth.userProfile) {
       this.profile = this.auth.userProfile;
-      console.log(this.profile);
-      console.log(this.profile.user_metadata);
     } else {
       this.auth.getProfile((err, profile) => {
         this.profile = profile;
-        console.log(this.profile);
+        this.profileID = this.profile.sub.substring(6);
+        this.entityService.profileID = this.profileID;
       });
     }
   }
