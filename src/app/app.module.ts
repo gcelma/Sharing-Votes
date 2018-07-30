@@ -47,10 +47,10 @@ import { AppRoutingModule } from './routes/app.routes';
 import { CreateEventComponent } from './components/profile/entity/create-event/create-event.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { AuthService } from './services/auth.service';
-import { FotosComponent } from './components/fotos/fotos.component';
 import { CargaComponent } from './components/carga/carga.component';
-import { CargaImagenesService } from './services/carga-imagenes.service';
+import { LoadImageService } from './services/load-image.service';
 import { environment } from '../environments/environment';
+import { PicturesComponent } from './components/profile/pictures/pictures.component';
 
 
 @NgModule({
@@ -63,7 +63,7 @@ import { environment } from '../environments/environment';
     AppWelcomeComponent,
     CreateEventComponent,
     ProfileComponent,
-    FotosComponent,
+    PicturesComponent,
     CargaComponent
   ],
   imports: [
@@ -80,7 +80,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [AuthService, CargaImagenesService,EntityService],
+  providers: [AuthService, LoadImageService, EntityService],
   bootstrap: [AppComponent]
 })
 

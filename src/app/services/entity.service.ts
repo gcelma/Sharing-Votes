@@ -34,7 +34,7 @@ export class EntityService {
    return this.http.delete(this.URL_API + `/${id}`);
  }
 
-  loginEntity(){
+  loginEntity() {
     return this.isEntity = true;
   }
 

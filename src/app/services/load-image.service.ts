@@ -9,13 +9,13 @@ import { FileItem } from '../models/file-items';
 @Injectable({
   providedIn: 'root'
 })
-export class CargaImagenesService {
+export class LoadImageService {
 
   private CARPETA_IMAGENES = 'img';
 
   constructor( private db: AngularFirestore) {}
 
-    cargarImagenesFirebase( imagenes: FileItem[] ) {
+    loadImagesFirebase( imagenes: FileItem[] ) {
     console.log( imagenes );
     }
 
