@@ -54,7 +54,7 @@ export class CreatePollComponent implements OnInit {
          this.resetForm(addPollForm); // Reset the FORM
          this.entityService.pollList.push(newPoll);
 
-         console.log(this.entityService.pollList);
+         console.log(this.entityService.pollList); 
 
       }
    }
