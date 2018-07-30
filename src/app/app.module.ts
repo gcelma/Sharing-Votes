@@ -58,6 +58,10 @@ import { PicturesComponent } from './components/profile/pictures/pictures.compon
 import { EntityRegisterComponent } from './components/entity-register/entity-register.component';
 import { EventsComponent } from './components/profile/entity/events/events.component';
 import { EventComponent } from './components/profile/entity/events/event/event.component';
+import { PollComponent } from './components/profile/entity/events/event/polls/poll/poll.component';
+import { PollsComponent } from './components/profile/entity/events/event/polls/polls.component';
+import { CreatePollComponent } from './components/profile/entity/events/event/create-poll/create-poll.component';
+import { QuestionsComponent } from './components/profile/entity/events/event/polls/poll/questions/questions.component';
 
 
 @NgModule({
@@ -74,7 +78,11 @@ import { EventComponent } from './components/profile/entity/events/event/event.c
     CargaComponent,
     EntityRegisterComponent,
     EventsComponent,
-    EventComponent
+    EventComponent,
+    PollComponent,
+    PollsComponent,
+    CreatePollComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

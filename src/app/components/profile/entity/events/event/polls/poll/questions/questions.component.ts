@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { EntityService } from '../../../../../../../services/entity.service';
+import { EntityService } from '../../../../../../../../services/entity.service';
 
-import { CustomPoll } from '../../../../../../../models/poll';
+import { CustomPoll } from '../../../../../../../../models/poll';
 
 @Component({
   selector: 'poll-questions',

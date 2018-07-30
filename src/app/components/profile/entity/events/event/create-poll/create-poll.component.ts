@@ -5,11 +5,11 @@ import { ToastrService } from 'ngx-toastr';
 
 import { NgForm } from '@angular/forms';
 
-import { CustomPoll } from '../../../../../models/poll';
+import { CustomPoll } from '../../../../../../models/poll';
 
-import { EntityEvent } from '../../../../../models/event';
+import { EntityEvent } from '../../../../../../models/event';
 
-import { EntityService } from '../../../../../services/entity.service';
+import { EntityService } from '../../../../../../services/entity.service';
 
 @Component({
   selector: 'create-poll',
@@ -35,8 +35,8 @@ export class CreatePollComponent implements OnInit {
      let option2 = addPollForm.value.option2;
      let option3 = addPollForm.value.option3;
      let option4 = addPollForm.value.option4;
-     let eventID = this.entityEvent.eventID;
-     let entityID = Math.round(Math.random()*10000)/10;
+     let eventID = "345hhcfgfgffgy";
+     let entityID = "345hhfgy";
 
      if (option3 == undefined) option3="";
      if (option4 == undefined) option4="";

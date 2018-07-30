@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { EntityEvent } from '../../../../../models/event';
+import { EntityEvent } from '../../../../../../models/event';
 
 @Component({
   selector: 'event-polls',

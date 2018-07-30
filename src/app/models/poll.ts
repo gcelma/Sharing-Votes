@@ -6,11 +6,11 @@ export class CustomPoll {
   pollOption2: string;
   pollOption3: string;
   pollOption4: string;
-  eventID: number;
-  entityID: number;
+  eventID: string;
+  entityID: string;
 
   constructor(question: string, option1: string, option2: string,
-               event: number, entity: number, option3?: string, option4?: string){
+               event: string, entity: string, option3?: string, option4?: string){
 
               this.pollQuestion = question;
               this.pollOption1 = option1;
