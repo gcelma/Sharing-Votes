@@ -1,33 +1,38 @@
-<h5>Registrar Evento</h5>
-<br>
-
-<form #addEventForm="ngForm" class="col s12" (ngSubmit)="addEvent(addEventForm)">
-    <div class="row">
-
-        <input type="hidden" name="entityID" [(ngModel)]="selectedEvent.entityID" #entityID="ngModel">
-
-        <div class="input-field col s12 m12">
-            <i class="material-icons prefix">help_outline</i>
-            <input name="eventName" type="text" [(ngModel)]="selectedEvent.eventName" #eventName="ngModel" data-length="20" maxlength="20">
-            <label for="eventName">Nombre del Evento</label>
-        </div>
-
-        <div class="input-field col s12 m12">
-            <i class="material-icons prefix">help_outline</i>
-            <textarea name="eventDescription" class="materialize-textarea" data-length="120" maxlength="120" [(ngModel)]="selectedEvent.eventDescription" #eventDescription="ngModel"></textarea>
-            <label for="eventDescription">Descripción</label>
-        </div>
-
-        <div class="input-field col s12 m12 margin-top">
-            <i class="material-icons prefix">help_outline</i>
-            <mat-datepicker-toggle class="right" matSuffix [for]="picker"></mat-datepicker-toggle>
-            <input name="eventTime" matInput [matDatepicker]="picker" [(ngModel)]="selectedEvent.eventTime" #eventTime="ngModel" placeholder="Elige una fecha">
-            <mat-datepicker #picker></mat-datepicker>
-        </div>
-
-        <div class="col s12 m12 center">
-            <button type="submit" mat-button class="btn blue">CREAR</button>
-        </div>
-
+<div class="row">
+    <div class="col m12">
+        <h5>Registrar Evento</h5>
     </div>
-</form>
+    <br>
+
+    <form #addEventForm="ngForm" class="col s12" (ngSubmit)="addEvent(addEventForm)">
+        <div class="row">
+
+            <input type="hidden" name="entityID" [(ngModel)]="selectedEvent.entityID" #entityID="ngModel">
+
+            <div class="input-field col s12 m12">
+                <i class="material-icons prefix">help_outline</i>
+                <input name="eventName" type="text" [(ngModel)]="selectedEvent.eventName" #eventName="ngModel" data-length="20" maxlength="20">
+                <label for="eventName">Nombre del Evento</label>
+            </div>
+
+            <div class="input-field col s12 m12">
+                <i class="material-icons prefix">help_outline</i>
+                <textarea name="eventDescription" class="materialize-textarea" data-length="120" maxlength="120" [(ngModel)]="selectedEvent.eventDescription" #eventDescription="ngModel"></textarea>
+                <label for="eventDescription">Descripción</label>
+            </div>
+
+            <div class="input-field col s12 m12 margin-top">
+                <i class="material-icons prefix">help_outline</i>
+                <mat-datepicker-toggle class="right" matSuffix [for]="picker"></mat-datepicker-toggle>
+                <input name="eventTime" matInput [matDatepicker]="picker" [(ngModel)]="selectedEvent.eventTime" #eventTime="ngModel" placeholder="Elige una fecha">
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+
+            <div class="col s12 m12 center">
+                <button type="submit" mat-button class="btn blue">CREAR</button>
+            </div>
+
+        </div>
+    </form>
+
+</div>

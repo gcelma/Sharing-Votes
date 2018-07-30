@@ -1,0 +1,9 @@
+.events-list {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-weight: bold;
+    color: orange;
+}
