@@ -14,7 +14,7 @@ import { MaterialModule } from './modules/material';
 
 import { EntityService } from './services/entity.service';
 
-import { FormsModule, ReactiveFormsModule } '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
