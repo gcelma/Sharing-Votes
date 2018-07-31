@@ -14,7 +14,7 @@
     <span>Profile</span>
   </button>
 
-    <button mat-menu-item *ngIf="!auth.isAuthenticated()">
+    <button mat-menu-item (click)="login()" *ngIf="!auth.isAuthenticated()">
     <mat-icon>near_me</mat-icon>
     <span>Login</span>
   </button>

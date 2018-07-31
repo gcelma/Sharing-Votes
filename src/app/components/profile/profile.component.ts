@@ -16,15 +16,22 @@ export class ProfileComponent implements OnInit {
                private entityService: EntityService) { }
 
   ngOnInit() {
-    if (this.auth.userProfile) {
-      this.profile = this.auth.userProfile;
-    } else {
-      this.auth.getProfile((err, profile) => {
-        this.profile = profile;
-        this.profileID = this.profile.sub.substring(6);
-        this.entityService.profileID = this.profileID;
-      });
+    // No puedes lanzar una exception en onInit, hay que capturarla
+    try {
+      if (this.auth.userProfile) {
+        this.profile = this.auth.userProfile;
+      } else {
+        this.auth.getProfile((err, profile) => {
+          this.profile = profile;
+          this.profileID = this.profile.sub.substring(6);
+          this.entityService.profileID = this.profileID;
+        });
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
-
+  login() {
+    this.auth.login();
+  }
   }

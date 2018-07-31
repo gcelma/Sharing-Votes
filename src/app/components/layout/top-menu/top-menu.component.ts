@@ -26,4 +26,8 @@ export class TopMenuComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  login() {
+    this.auth.login();
+  }
+
 }

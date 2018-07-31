@@ -23,7 +23,7 @@
 
 mat-icon:hover {
     cursor: pointer;
-    color: #FFCA28;
+    color: white;
 }
 
 mat-toolbar {
@@ -39,4 +39,8 @@ mat-toolbar {
     height: 24px;
     width: 24px;
     color: black;
+}
+
+.mat-icon:focus {
+    outline: 0;
 }

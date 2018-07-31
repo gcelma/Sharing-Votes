@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../../../services/auth.service';
 
 
 
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.css']
 })
-export class TopNavComponent {
+export class TopNavComponent { 
 
   appTitle: string;
 
@@ -19,8 +20,13 @@ export class TopNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.appTitle = "Sharing Votes";
+  constructor(private breakpointObserver: BreakpointObserver,
+              private auth: AuthService) {
+    this.appTitle = 'Sharing Votes';
+  }
+
+  login() {
+    this.auth.login();
   }
 
   }
