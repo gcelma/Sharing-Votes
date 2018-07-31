@@ -19,7 +19,7 @@ export class EventComponent implements OnInit {
   }
 
   createPoll(id: string){  // Show INFO of the Book by Key
-    this.router.navigate(['/profile/'+id+'/theme']);
+  this.router.navigate(['/profile/', id]);
   }
 
 }
