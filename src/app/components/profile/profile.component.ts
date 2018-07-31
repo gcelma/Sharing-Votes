@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   profileID: string;
 
   constructor( private auth: AuthService,
-                private entityService: EntityService) { }
+               private entityService: EntityService) { }
 
   ngOnInit() {
     if (this.auth.userProfile) {

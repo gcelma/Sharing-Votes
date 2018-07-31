@@ -22,11 +22,14 @@ export class CreatePollComponent implements OnInit {
 
   customPoll: CustomPoll;
   selectedPoll: CustomPoll = <CustomPoll>{};
+  entityID: string;
 
    constructor(private entityService: EntityService,
               private toastr: ToastrService) {}
 
-   ngOnInit() {}
+   ngOnInit() {
+     this.entityID = this.entityService.profileID;
+   }
 
    onSubmit(addPollForm: NgForm){
 
@@ -36,7 +39,6 @@ export class CreatePollComponent implements OnInit {
      let option3 = addPollForm.value.option3;
      let option4 = addPollForm.value.option4;
      let eventID = "12345";
-     let entityID = this.entityService.profileID;
 
      if (option3 == undefined) option3="";
      if (option4 == undefined) option4="";
@@ -46,7 +48,7 @@ export class CreatePollComponent implements OnInit {
 
      else {
          let newPoll: CustomPoll = new CustomPoll (question,option1,option2,
-                                                   eventID,entityID,
+                                                   eventID,this.entityID,
                                                    option3,option4);
 
          this.toastr.success('Tema Creado', 'Muy bien!');
