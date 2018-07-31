@@ -3,8 +3,9 @@
         <h5>Registrar Evento</h5>
     </div>
     <br>
+    <br><br>
 
-    <form #addEventForm="ngForm" class="col s12" (ngSubmit)="addEvent(addEventForm)">
+    <form #addEventForm="ngForm" class="col s12 margin-top" (ngSubmit)="addEvent(addEventForm)">
         <div class="row">
 
             <input type="hidden" name="entityID" [(ngModel)]="selectedEvent.entityID" #entityID="ngModel">
@@ -28,6 +29,18 @@
                 <input name="eventTime" matInput [matDatepicker]="picker" [(ngModel)]="selectedEvent.eventTime" #eventTime="ngModel" placeholder="Elige una fecha">
                 <mat-datepicker #picker></mat-datepicker>
             </div>
+
+            <!-- <div class="file-field input-field">
+                <div class="btn orange right">
+                    <span>File</span>
+                    <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input name="picture" class="file-path validate" style="margin-top: 25px;" placeholder="Sube tu foto" type="text">
+                </div>
+            </div> -->
+
+
 
             <div class="col s12 m12 center">
                 <button type="submit" mat-button class="btn blue">CREAR</button>
