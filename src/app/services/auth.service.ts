@@ -17,7 +17,7 @@ export class AuthService {
     domain: 'subirats345.eu.auth0.com',
     responseType: 'token id_token',
     audience: 'https://subirats345.eu.auth0.com/userinfo',
-    redirectUri: 'http://sharingvotes.epizy.com/callback',
+    redirectUri: 'http://localhost:4200/callback',
     scope: 'openid profile'
   });
 
